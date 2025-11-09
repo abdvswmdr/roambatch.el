@@ -1,0 +1,183 @@
+#+TITLE: roambatch.el
+#+HTML: <a href="https://github.com/brunoarine/org-similarity/releases"><img alt="Last release" src="https://img.shields.io/github/v/tag/abdvswmdr/roambatch.el"></a> &nbsp; <a href="https://github.com/brunoarine/org-similarity/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/abdvswmdr/roambatch.el"></a><br>
+
+Batch insert multiple org-roam nodes at once using Helm multi-selection. Instead of inserting one org-roam node link at a time, it lets you mark multiple nodes and insert them all together. Each link is inserted on its own line.
+
+![Roambatch.el in Action](https://raw.githubusercontent.com/abdvswmdr/roambatch.el/master/roambatch.gif)
+
+## Contents
+ * [Installation](#installation)
+ * [Configuration](#configuration)
+ * [Features](#features)
+ * [Troubleshooting](#troubleshooting)
+ 
+## Installation
+
+### Requirements
+
+- Emacs 27.1+
+- [org-roam](https://github.com/org-roam/org-roam) 2.0+
+- [Helm](https://github.com/emacs-helm/helm) 3.0+
+
+### Manual Installation
+
+Clone or download this repository and add to your `load-path`:
+
+```elisp
+(add-to-list 'load-path "~/.emacs.d/roambatch")
+(require 'roambatch)
+(global-set-key (kbd "C-c n b") 'roambatch)
+```
+
+### Using straight.el
+
+```elisp
+(use-package roambatch
+  :straight (:host github :repo "yourusername/roambatch")
+  :bind ("C-c n b" . roambatch)
+  :after (org-roam helm))
+```
+
+### Using package.el (After MELPA submission)
+The package can be installed via MELPA. The package name is roambatch.
+
+```elisp
+M-x package-install RET roambatch
+```
+
+## Configuration
+
+To change the keybinding, add to your config:
+
+```elisp
+(require 'roambatch)
+(global-set-key (kbd "C-c n b") 'roambatch)
+```
+
+
+### With Evil Mode
+
+```elisp
+;; Normal mode binding
+(define-key evil-normal-state-map (kbd "gnb") 'roambatch)
+
+;; Evil ex-command
+(with-eval-after-load 'evil
+  (evil-ex-define-cmd "nib" 'roambatch))
+```
+
+Then use:
+- `gnb` in normal mode
+- `:nib` in command mode
+
+### Disable j/k Navigation
+
+If you prefer to use arrow keys instead of `j`/`k` for navigation, or want to disable custom navigation entirely, you can customize the keybindings in the package. Check the source code for modification points.
+
+## Features
+
+- **Batch selection**: Mark multiple org-roam nodes with `M-SPC`
+- **Dynamic search**: Type to filter nodes while you're searching
+- **Vim-like navigation**: Use `j`/`k` to navigate results (optional, can be disabled)
+- **Flexible marking**: Mark/unmark nodes, or mark all visible at once
+- **Clean formatting**: Each inserted link appears on its own line
+
+## Usage
+
+1. Call `M-x roambatch` or keybinding 
+2. Type to search for org-roam nodes
+3. Press `M-SPC` to mark nodes you want to insert
+4. Press `RET` to insert all marked nodes
+5. Each link appears on a new line in your buffer
+
+### Default bindings in Helm Buffer
+
+| Key         | Action                          |
+|-------------|---------------------------------|
+| `M-SPC`     | Mark/unmark current node        |
+| `,`         | Navigate down to next result    |
+| `.`         | Navigate up to previous result  |
+| `C-;`       | Mark all visible nodes          |
+| `TAB`       | Toggle between search and list  |
+| `/`         | Search (type to filter)         |
+| `RET`       | Insert all marked nodes         |
+| `C-g`       | Cancel                          |
+
+
+## Examples
+
+### Insert multiple project notes
+
+1. Open your project's main note
+2. Press `C-c n b` (or `gnb` if using Evil)
+3. Search for "project-"
+4. Mark related notes with `M-SPC`
+5. Press `RET`
+6. All related notes are linked, each on its own line
+
+### Mark all visible nodes
+
+1. Press `C-c n b`
+2. Type a search term to filter results
+3. Press `C-l` to mark all visible matches
+4. Press `RET` to insert them all
+
+## Tips
+
+- **Search first, then mark**: Use the search to narrow down nodes, then mark the ones you want
+- **Mark multiple times**: You can mark some, then search for more and mark additional nodes
+- **Use M-SPC to toggle**: If you accidentally mark a node, press `M-SPC` again to unmark it
+- **Mark all with C-l**: Quick way to insert all results for a search term
+
+## Troubleshooting
+
+### "org-roam is not available" error
+
+Ensure you have installed and loaded org-roam:
+
+```elisp
+(use-package org-roam
+  :ensure t
+  :init
+  (setq org-roam-v2-ack t)
+  :config
+  (org-roam-setup))
+```
+
+### "helm is not available" error
+
+Ensure Helm is installed:
+
+```elisp
+(use-package helm
+  :ensure t
+  :config
+  (helm-mode 1))
+```
+
+### Links not appearing as expected
+
+Check that your org file is in proper org-roam format with valid node IDs. Each node should have a unique ID property.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit issues or pull requests.
+
+## License
+
+GPL-3.0 License - See LICENSE file for details
+
+## Related Projects
+
+- [org-roam](https://github.com/org-roam/org-roam) - A Roam Research clone built on Org-mode
+- [Helm](https://github.com/emacs-helm/helm) - An Emacs incremental completion and selection narrowing framework
+
+## Changelog
+
+### [0.1.0] - 2025-08-22
+
+- Initial release
+- Batch insert functionality with Helm
+- Support for marking multiple nodes
+- j/k navigation for results
+- Each link inserted on separate line
