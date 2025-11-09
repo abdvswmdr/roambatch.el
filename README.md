@@ -1,5 +1,5 @@
 #+TITLE: roambatch.el
-#+HTML: <a href="https://github.com/brunoarine/org-similarity/releases"><img alt="Last release" src="https://img.shields.io/github/v/tag/abdvswmdr/roambatch.el"></a> &nbsp; <a href="https://github.com/brunoarine/org-similarity/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/abdvswmdr/roambatch.el"></a><br>
+#+HTML: <a href="https://github.com/abdvswmdr/roambatch.el/org-similarity/releases"><img alt="Last release" src="https://img.shields.io/github/v/tag/abdvswmdr/roambatch.el"></a> &nbsp; <a href="https://github.com/abdvswmdr/roambatch.el/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/abdvswmdr/roambatch.el"></a><br>
 
 Batch insert multiple org-roam nodes at once using Helm multi-selection. Instead of inserting one org-roam node link at a time, it lets you mark multiple nodes and insert them all together. Each link is inserted on its own line.
 
