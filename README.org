@@ -1,4 +1,3 @@
-```markdown
 #+TITLE: roambatch.el
 #+HTML: <a href="https://github.com/abdvswmdr/roambatch.el/org-similarity/releases"><img alt="Last release" src="https://img.shields.io/github/v/tag/abdvswmdr/roambatch.el"></a> &nbsp; <a href="https://github.com/abdvswmdr/roambatch.el/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/abdvswmdr/roambatch.el"></a><br>
 
@@ -182,4 +181,3 @@ GPL-3.0 License - See LICENSE file for details
 - Support for marking multiple nodes
 - j/k navigation for results
 - Each link inserted on separate line
-```
