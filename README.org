@@ -1,5 +1,5 @@
 #+TITLE: roambatch.el
-#+HTML: <a href="https://github.com/abdvswmdr/roambatch.el/releases"><img alt="Last release" src="https://img.shields.io/github/v/tag/abdvswmdr/roambatch.el"></a> &nbsp; <a href="https://github.com/abdvswmdr/roambatch.el/blob/master/LICENSE.txt"><img alt="License" src="https://img.shields.io/github/license/abdvswmdr/roambatch.el"></a><br>
+#+HTML: <a href="https://github.com/abdvswmdr/roambatch.el/releases"><img alt="Last release" src="https://img.shields.io/github/v/tag/abdvswmdr/roambatch.el"></a> &nbsp; <a href="https://github.com/abdvswmdr/roambatch.el/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/abdvswmdr/roambatch.el"></a><br>
 
 #+TITLE: roambatch.el
 
