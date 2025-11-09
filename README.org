@@ -3,7 +3,7 @@
 
 Batch insert multiple org-roam nodes at once using Helm multi-selection. Instead of inserting one org-roam node link at a time, it lets you mark multiple nodes and insert them all together. Each link is inserted on its own line.
 
-![Roambatch.el in Action](https://raw.githubusercontent.com/abdvswmdr/roambatch.el/master/roambatch.gif)
+![Roambatch.el in Action](https://raw.githubusercontent.com/abdvswmdr/roambatch.el/roambatch.gif)
 
 ** Contents
  * [Installation][#installation]
