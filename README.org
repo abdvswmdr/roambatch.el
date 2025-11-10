@@ -9,18 +9,18 @@ Batch insert multiple org-roam nodes at once using Helm multi-selection. Instead
 [[file:roambatch.gif]]
 
 ** Contents
- * [Installation][#installation]
- * [Configuration][#configuration]
- * [Features][#features]
- * [Troubleshooting][#troubleshooting]
+ * [[#installation][Installation]]
+ * [[#configuration][Configuration]]
+ * [[#features][Features]]
+ * [[#troubleshooting][Troubleshooting]]
  
 ** Installation
 
 *** Requirements
 
 - Emacs 27.1+
-- [org-roam](https://github.com/org-roam/org-roam) 2.0+
-- [Helm](https://github.com/emacs-helm/helm) 3.0+
+- [org-roam 2.0+][https://github.com/org-roam/org-roam]
+- [Helm 3.0+][https://github.com/emacs-helm/helm]
 
 *** Manual Installation
 
@@ -81,7 +81,7 @@ If you prefer to use arrow keys instead of =j=/=k= for navigation, or want to di
 
 - =Batch selection=: Mark multiple org-roam nodes with =M-SPC=
 - =Dynamic search=: Type to filter nodes while you're searching
-- =Vim-like navigation=: Use =j=/=k= to navigate results (optional, can be disabled)
+- =Navigation=: Use ,/. to navigate results 
 - =Flexible marking=: Mark/unmark nodes, or mark all visible at once
 - =Clean formatting=: Each inserted link appears on its own line
 
@@ -101,36 +101,10 @@ If you prefer to use arrow keys instead of =j=/=k= for navigation, or want to di
 | =,=         | Navigate down to next result    |
 | =.=         | Navigate up to previous result  |
 | =C-;=       | Mark all visible nodes          |
-| =TAB=       | Toggle between search and list  |
 | =/=         | Search (type to filter)         |
 | =RET=       | Insert all marked nodes         |
 | =C-g=       | Cancel                          |
 
-
-** Examples
-
-*** Insert multiple project notes
-
-1. Open your project's main note
-2. Press =C-c n b= (or =gnb= if using Evil)
-3. Search for "project-"
-4. Mark related notes with =M-SPC=
-5. Press =RET=
-6. All related notes are linked, each on its own line
-
-**# Mark all visible nodes
-
-1. Press =C-c n b=
-2. Type a search term to filter results
-3. Press =C-l= to mark all visible matches
-4. Press =RET= to insert them all
-
-** Tips
-
-- =Search first, then mark=: Use the search to narrow down nodes, then mark the ones you want
-- =Mark multiple times=: You can mark some, then search for more and mark additional nodes
-- =Use M-SPC to toggle=: If you accidentally mark a node, press =M-SPC= again to unmark it
-- **Mark all with C-l**: Quick way to insert all results for a search term
 
 ** Troubleshooting
 
@@ -158,22 +132,9 @@ Ensure Helm is installed:
   (helm-mode 1))
 #+end_src
 
-*** Links not appearing as expected
-
-Check that your org file is in proper org-roam format with valid node IDs. Each node should have a unique ID property.
-
 ** Contributing
 
 Contributions are welcome! Please feel free to submit issues or pull requests.
-
-** License
-
-GPL-3.0 License - See LICENSE file for details
-
-** Related Projects
-
-    - [org-roam](https://github.com/org-roam/org-roam) - A Roam Research clone built on Org-mode
-    - [Helm](https://github.com/emacs-helm/helm) - An Emacs incremental completion and selection narrowing framework
 
 ** Changelog
 
@@ -182,5 +143,5 @@ GPL-3.0 License - See LICENSE file for details
     - Initial release
     - Batch insert functionality with Helm
     - Support for marking multiple nodes
-    - j/k navigation for results
+    - ,/. navigation for results
     - Each link inserted on separate line
