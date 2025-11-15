@@ -18,7 +18,7 @@ Batch insert multiple org-roam nodes at once using Helm multi-selection. Instead
 
 *** Requirements
 
-- Emacs 27.1+
+- Emacs 27.1 or later
 - [org-roam 2.0+][https://github.com/org-roam/org-roam]
 - [Helm 3.0+][https://github.com/emacs-helm/helm]
 
