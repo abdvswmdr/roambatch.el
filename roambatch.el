@@ -5,9 +5,9 @@
 ;; URL: http://github.com/abdvswmdr/roambatch.el
 ;; Created: 2025
 ;; Version: 0.1.0
-;; Keywords: org-roam helm 
+;; Keywords: outlines convenience hypermedia org-roam helm
 ;; Package-Requires: ((emacs "27.1") (org-roam "2.0") (helm "3.0"))
-;; License: GPL-3+
+;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; This file is NOT part of GNU Emacs.
 ;;
@@ -38,9 +38,9 @@ Keybindings in Helm buffer:
   - RET: insert all marked nodes"
   (interactive)
   (unless (require 'org-roam nil t)
-    (user-error "org-roam is not available. Please install it first"))
+    (user-error "Package org-roam is not available.  Please install it first"))
   (unless (require 'helm nil t)
-    (user-error "helm is not available. Please install it first"))
+    (user-error "Package helm is not available.  Please install it first"))
 
   ;; Get all org-roam nodes
   (let* ((nodes (org-roam-node-list))
@@ -49,18 +49,18 @@ Keybindings in Helm buffer:
                                (let ((display (org-roam-node-title node)))
                                  (puthash display node node-hash)
                                  display))
-                            nodes)))
+                             nodes)))
 
     ;; Variable to capture marked items from Helm
     (let ((marked-items '()))
       ;; Create a custom Helm source with action that captures marked candidates
       (let ((helm-source (helm-make-source "Org-Roam Nodes" 'helm-source-sync
-                          :candidates candidates
-                          :action (list (cons "Insert All Marked"
-                                            (lambda (candidate)
-                                              ;; Get marked candidates while Helm is still open
-                                              (setq marked-items (or (helm-marked-candidates)
-                                                                     (list candidate)))))))))
+                           :candidates candidates
+                           :action (list (cons "Insert All Marked"
+                                               (lambda (candidate)
+						 ;; Get marked candidates while Helm is still open
+						 (setq marked-items (or (helm-marked-candidates)
+									(list candidate)))))))))
 
         ;; Create custom keymap for navigation and marking all
         (let ((helm-map (copy-keymap helm-map)))
@@ -89,7 +89,7 @@ Keybindings in Helm buffer:
                     ;; Create org-mode link using org-link-make-string
                     (progn
                       (insert (org-link-make-string (concat "id:" (org-roam-node-id node))
-                                                      (org-roam-node-title node)))
+                                                    (org-roam-node-title node)))
                       (insert "\n"))
                   (message "Node not found: %s" display))))))))))
 
