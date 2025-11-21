@@ -93,7 +93,7 @@ If you prefer to use arrow keys instead of =j=/=k= for navigation, or want to di
 4. Press =RET= to insert all marked nodes
 5. Each link appears on a new line in your buffer
 
-**# Default bindings in Helm Buffer
+*** Default bindings in Helm Buffer
 
 | Key         | Action                          |
 |-------------|---------------------------------|
